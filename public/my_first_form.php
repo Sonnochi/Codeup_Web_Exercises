@@ -11,6 +11,7 @@ var_dump($_POST);
 	<title>My First Form</title>
 </head>
 <body>
+<h2>User Login</h2>
 <form method="POST" action="/my_first_form.php">
     <p>
         <label for="username">Username</label>
@@ -25,6 +26,27 @@ var_dump($_POST);
         <button type="submit">Login</button>
     </p>
 </form>
-
+<h2>Compose an Email</h2>
+<form method="POST" action="/my_first_form.php">
+	<p>
+		<label for="to">To: </label>
+		<input type="text" id="recever" name="recever" value="" placeholder="Recipient Email">
+	</p>
+	<p>
+		<label for="from">From: </label>
+		<input type="text" id="sender" name="sender" value="" placeholder="Your Email">
+	</p>
+	<p>
+		<label for="subject">Subject: </label>
+		<input type="text" id="topic" name="topic" value="" placeholder="Subject">
+	</p>
+	<p>
+		<label for="email_body">Enter Text:</label>
+		<textarea id="email_body" name="email_body">Text Here</textarea>
+	</p>
+	<p>
+		<button type="send">Send</button>
+	</p>
+</form>
 </body>
 </html>
