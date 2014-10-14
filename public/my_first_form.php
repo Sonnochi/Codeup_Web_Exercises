@@ -42,10 +42,42 @@ var_dump($_POST);
 	</p>
 	<p>
 		<label for="email_body">Enter Text:</label>
-		<textarea id="email_body" name="email_body">Text Here</textarea>
+		<textarea id="email_body" name="email_body"></textarea>
 	</p>
 	<p>
 		<button type="send">Send</button>
+	</p>
+	<p>
+		<label for="mailing_list">
+    		<input type="checkbox" id="mailing_list" name="mailing_list" value="yes" checked="">
+    		<label for="mailing_list">Would you like to save a copy of the email?</label>
+		</label>
+	</p>
+</form>
+<h2>Multiple Choice Test</h2>
+<form method="POST" action="/my_first_form.php">
+	<p>The Earth's natural satalite is the moon?</p>
+<label>
+    <input type="radio" id="q1a" name="q1" value="True">
+    True
+</label>
+<label>
+    <input type="radio" id="q1b" name="q1" value="False">
+    False
+</label>
+	<p>
+		<button type="submit">Submit</button>
+	</p>
+</form>
+<form method="POST" action="/my_first_form.php">
+	<h2>Select Testing</h2>
+	<label for="choice">Is the sky blue?</label>
+		<select id="choice" name="chioce">
+		    <option value="1">Yes</option>
+		    <option value="0" selected>No</option>
+		</select>
+	<p>
+		<button type="submit">Submit</button>
 	</p>
 </form>
 </body>
