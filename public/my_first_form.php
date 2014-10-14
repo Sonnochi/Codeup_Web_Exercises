@@ -71,6 +71,7 @@ var_dump($_POST);
 		<select id="choice" name="chioce">
 		    <option value="1">Yes</option>
 		    <option value="0" selected>No</option>
+		    <option value="2">Maybe</option>
 		</select>
 	<p>
 		<button type="submit">Submit</button>
