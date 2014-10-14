@@ -54,17 +54,13 @@ var_dump($_POST);
 		</label>
 	</p>
 </form>
-<h2>Multiple Choice Test</h2>
-<form method="POST" action="/my_first_form.php">
-	<p>The Earth's natural satalite is the moon?</p>
-<label>
-    <input type="radio" id="q1a" name="q1" value="True">
-    True
-</label>
-<label>
-    <input type="radio" id="q1b" name="q1" value="False">
-    False
-</label>
+	<h2>Multiple Choice Test</h2>
+	<form method="POST" action="/my_first_form.php">
+		<p>The Earth's natural satalite is the moon.</p>
+	<select id="os" name="os[]" multiple>
+	    <option value="true">True</option>
+	    <option value="false">False</option>
+	</select>
 	<p>
 		<button type="submit">Submit</button>
 	</p>
