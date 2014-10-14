@@ -11,17 +11,18 @@ var_dump($_POST);
 	<title>My First Form</title>
 </head>
 <body>
-<form method="GET" action="/my_first_form.php">
+<form method="POST" action="/my_first_form.php">
     <p>
         <label for="username">Username</label>
-        <input id="username" name="username" type="text">
+        <input id="username" name="username" type="text" value="" placeholder= "Enter Username">
     </p>
     <p>
         <label for="password">Password</label>
-        <input id="password" name="password" type="password">
+        <input id="password" name="password" type="password" value="" placeholder= "Enter Password">
     </p>
     <p>
-        <input type="submit">
+       <!-- <input type="submit" name="Login" value="Login"> -->
+        <button type="submit">Login</button>
     </p>
 </form>
 
