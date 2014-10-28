@@ -105,14 +105,19 @@ if (isset($_POST['newitem'])) {
 
 <ol>
 
-	<?php
 
-		//This loops through the items array and outputs individual list items.
-		foreach ($items as $key => $item) {
-			echo "<li>" . "<a href=\"?id=$key\">X<a> " . $item ."</li>";
-		}
 
-	?>
+		<!-- This loops through the items array and outputs individual list items. -->
+		
+		<? foreach($items as $key => $item): ?>
+
+		<li>
+			<?= htmlspecialchars($item) ?>
+			<a href="?id=<?=$key?>"> X </a>
+		</li> 
+
+		<? endforeach ?>
+
 
 </ol> 
 
