@@ -7,18 +7,17 @@ function openFile($filename = 'list.txt'){
 
 	//If the filesize is greater that zero, use it.
 	// Otherwise set a default filesize of 100 bytes.
-	if (filesize($filename) > 0) {
+	if (file_exists($filename) && filesize($filename) > 0) {
+		$handle = fopen($filename, 'r');
+		$contents = trim(fread($handle, filesize($filename)));
+		$contentArray = explode("\n", $contents);
 		$filesize = filesize($filename);
+		fclose($handle);
 	}
 	else{
-		$filesize = 100;
+		$contentArray = [];
 	}
 	
-
-	$handle = fopen($filename, 'r');
-	$contents = trim(fread($handle, filesize($filename)));
-	$contentArray = explode("\n", $contents);
-	fclose($handle);
 
 	return $contentArray;
 }
@@ -95,6 +94,8 @@ if (isset($_POST['newitem'])) {
 	<button type="submit">Add</button>
 
 </form>
+
+
  
 </body>
 </html>
