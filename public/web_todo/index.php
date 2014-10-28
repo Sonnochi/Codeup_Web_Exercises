@@ -55,10 +55,15 @@ function openFile($filename = 'list.txt'){
 	return $contentArray;
 }
  
+}
 // Define a function which will save your list to file.
 
 /* This function accepts an array, saves it to file, and returns nothing. */
 function saveFile($array, $filename = 'list.txt'){
+
+	foreach ($$array as $key => $value) {
+		$array[$key] = htmlspecialchars(strip_tags($item));
+	}
 
 	$handle = fopen($filename, 'w');
 	// Implode the entire array into one string, with newlines in between each item
@@ -112,7 +117,7 @@ if (isset($_POST['newitem'])) {
 		<? foreach($items as $key => $item): ?>
 
 		<li>
-			<?= htmlspecialchars($item) ?>
+			<?= htmlspecialchars(strip_tags($item)) ?>
 			<a href="?id=<?=$key?>"> X </a>
 		</li> 
 
