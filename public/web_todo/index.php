@@ -1,8 +1,55 @@
 <?php
-
-// Initialize your array by calling your function to open file.
  
-$items = openFile();
+ class ToDoList{
+
+ 	// public $name = '';
+ 	public $filename = 'list.txt';
+ 	public $items = [];
+	// Define a function which will open your default filename, and return an array of items.
+
+	/* This function accepts an array, saves it to file, and returns an array of list items. */ 
+	public function openFile(){
+		$contentArray = [];
+
+		//If the filesize is greater that zero, use it.
+		if (file_exists($this->filename) && filesize($this->filename) > 0) {
+			$handle = fopen($this->filename, 'r');
+			$contents = trim(fread($handle, filesize($this->filename)));
+			$contentArray = explode("\n", $contents);
+			$filesize = filesize($this->filename);
+			fclose($handle);
+		}
+		// var_dump($contentArray);
+		return $contentArray;
+	}
+ 
+
+	// Define a function which will save your list to file.
+
+	/* This function accepts an array, saves it to file, and returns nothing. */
+	public function saveFile($array){
+
+		foreach ($array as $key => $value) {
+			$array[$key] = htmlspecialchars(strip_tags($value));
+		}
+
+		$handle = fopen($this->filename, 'w');
+		// Implode the entire array into one string, with newlines in between each item
+		$string = implode("\n", $array);
+		//Write that whole sting to file.
+		fwrite($handle, $string);
+		fclose($handle);
+	}
+}
+// Initialize your array by calling your function to open file.
+
+// Create a new instance of Conversation
+$itemsList = new ToDoList();
+$itemsList->filename = 'list.txt';
+$items = $itemsList->openFile();
+
+
+
 
 // Verify there were uploaded files and no errors
 if (count($_FILES) > 0 && $_FILES['file1']['error'] == UPLOAD_ERR_OK && $_FILES['file1']['error'] == 'text/plain'){
@@ -35,43 +82,6 @@ if (isset($savedFilename)) {
     echo "<p>You can download your file <a href='/uploads/{$filename}'>here</a>.</p>";
 }
  
-// Define a function which will open your default filename, and return an array of items.
-
-/* This function accepts an array, saves it to file, and returns an array of list items. */ 
-function openFile($filename = 'list.txt'){
-
-	//If the filesize is greater that zero, use it.
-	// Otherwise set a default filesize of 100 bytes.
-	if (file_exists($filename) && filesize($filename) > 0) {
-		$handle = fopen($filename, 'r');
-		$contents = trim(fread($handle, filesize($filename)));
-		$contentArray = explode("\n", $contents);
-		$filesize = filesize($filename);
-		fclose($handle);
-	}
-	else{
-		$contentArray = [];
-	}
-	return $contentArray;
-}
- 
-}
-// Define a function which will save your list to file.
-
-/* This function accepts an array, saves it to file, and returns nothing. */
-function saveFile($array, $filename = 'list.txt'){
-
-	foreach ($$array as $key => $value) {
-		$array[$key] = htmlspecialchars(strip_tags($item));
-	}
-
-	$handle = fopen($filename, 'w');
-	// Implode the entire array into one string, with newlines in between each item
-	$string = implode("\n", $array);
-	//Write that whole sting to file.
-	fwrite($handle, $string);
-	fclose($handle);
-}
  
  
 
@@ -80,8 +90,9 @@ function saveFile($array, $filename = 'list.txt'){
     // If there is a get request; remove the appropriate item.
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
+	//$itemsList->items = array_values($itemsList->items);
 	unset($items[$id]);
-	saveFile($items);
+	$itemsList->saveFile($items);
 } 
 
  
@@ -89,11 +100,9 @@ if (isset($_GET['id'])) {
     // If there is a post request; add the items.
 if (isset($_POST['newitem'])) {
 	//Assign newitem from the form the itemToAdd
-	$itemToAdd = $_POST['newitem'];
-	//Array push that new item onto the existing list.
-	$items[] = $itemToAdd;
+	$items[] = $_POST['newitem'];
 	//Save the whole list to file.
-	saveFile($items);
+	$itemsList->saveFile($items);
 
 }
  
