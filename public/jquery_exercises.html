@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+ 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1 id="greeting">Hello</h1>
+
+	<p id="french">Test pour jQuery. Tellement test, si peu de temps.</p>
+
+	<div class="codeup">
+		<h2 id="greeting2">list this</h2>
+		<ul>
+			<li>kapuri</li>
+			<li>tokoyo</li>
+			<li>mate</li>
+		</ul>
+	</div>
+
+	<div id="codeup">
+		<h2>numbered list</h2>
+		<ol>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ol>
+	</div>
+
+			<script> 
+			$('document').ready(function() {
+			var contents = $('#greeting').html();
+			console.log(contents);
+			});
+			</script>
+
+			<script> 
+			$('document').ready(function() {
+			var contents2 = $('#greeting2').html();
+			console.log(contents2);
+			});
+			</script>
+
+			<script> 
+			$('document').ready(function() {
+			var stuff = $('.codeup').html();
+			console.log(stuff);
+			});
+			</script>
+
+			<script> 
+			$('document').ready(function() {
+			var contents3 = $('#codeup').html();
+			console.log(contents3);
+			});
+			</script>
+
+			<script>
+			$('.codeup').css('border', '1px solid red');
+			</script>
+
+
+ 	
+</body>
+</html>
