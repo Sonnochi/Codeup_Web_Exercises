@@ -7,7 +7,7 @@
 <body>
 	<h1 id="greeting">Hello</h1>
 
-	<p>Test pour jQuery. Tellement test, si peu de temps.</p>
+	<p id="frech">Test pour jQuery. Tellement test, si peu de temps.</p>
 
 	<div class="codeup">
 		<h2 id="greeting2">list this</h2>
@@ -57,7 +57,24 @@
 
 			<script>
 			$('li').css('font-size', '20px');
-			$('p, li, h1, h2').css('background-color', 'yellow');
+
+			$('#greeting').click(function(){
+				$(this).css('color', 'green');
+			});
+
+			$('#frech').dblclick(function(){
+
+				$(this).css('font-size', '30px');
+			});
+
+			 $('li').hover(
+			 	function() {
+                    $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', 'black');
+                });
+
 			</script>
 
 
