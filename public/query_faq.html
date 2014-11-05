@@ -46,6 +46,29 @@
 		<dd class='invisible'>Escape velocity is the speed a moving object must have in order to escape from the gravitational pull exerted by another object.</dd>
 	</dl>
 
+<h3>Earth</h3>
+	<ul>
+		<li>bjkbkbk</li>
+		<li>gkgkas</li>
+		<li>fahkv</li>
+		<li>fjfkqdkg</li>
+	</ul>
+<h3>Neptiune</h3>
+	<ul>
+		<li>bjlcasbjca</li>
+		<li>hjkascbhm</li>
+		<li>ghkavhm</li>
+		<li>gbkasck</li>
+	</ul>
+<h3>Pluto</h3>
+	<ul>
+		<li>gkadkgadgk</li>
+		<li>gkkhacb</li>
+		<li>vkhacvhkc</li>
+		<li>bjlascbjlkas</li>
+	</ul>
+
+
 
 	<script>
 	$('document').ready(function(){
@@ -55,6 +78,22 @@
                 $('dd').toggleClass('invisible');
             });
 	});
+		$('ul').each(function(){
+			//console.log($(this));
+			$(this).children().first().css('font-weight', 'bold');
+		});
+		
+		$('li').click(function(){
+			$(this).parent('ul').addClass('invisible');
+		});
+
+		$('dd').addClass('invisible');
+		
+		$('dt').click(function(){
+			$(this).next('dd').toggleClass('invisible');
+		});
+
+
 	</script>
 
 	<a href="#" id="highlight-important">Display Answers.</a>
