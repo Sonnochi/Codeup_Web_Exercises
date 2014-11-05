@@ -75,9 +75,10 @@
 
 		 $('a').click(function(event) {
                 event.preventDefault();
-                $('dd').toggleClass('invisible');
+                $('dd').toggle('invisible');
             });
 	});
+
 		$('ul').each(function(){
 			//console.log($(this));
 			$(this).children().first().css('font-weight', 'bold');
@@ -87,10 +88,10 @@
 			$(this).parent('ul').addClass('invisible');
 		});
 
-		$('dd').addClass('invisible');
-		
+		$('dd').hide;
+
 		$('dt').click(function(){
-			$(this).next('dd').toggleClass('invisible');
+			$(this).next('dd').toggle();
 		});
 
 
