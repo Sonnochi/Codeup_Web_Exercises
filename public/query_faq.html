@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<style>
+		.invisible{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+
+
+<h2>FAQ</h2>
+	<dl>
+		<dt> What is a Moon?</dt>
+		<dd class="invisible">A solid object in orbit around a planet, dwarf planet, minor planet, or transneptunian object is called a "satellite." A natural satellite is sometimes referred to as a "moon" in popular usage.</dd><br>
+
+		<dt>What is a Black Hole?</dt>
+		<dd class="invisible">A region of space having a gravitational field so intense that no matter or radiation can escape.</dd><br>
+
+		<dt>How many planets are there in our solar system?</dt>
+		<dd class='invisible'>Our solar system officially has eight planets and one star: the Sun. In order from the Sun out, the planets are: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</dd><br>
+
+		<dt>Is Pluto really a planet?</dt>
+		<dd class="invisible">No. The official arbiter of such questions is the IAU and they have decided that Pluto should be classified as a dwarf planet, a category distinct from regular planets.</dd><br>
+
+		<dt>Do all objects in the universe exert force on all other objects?</dt>
+		<dd class="invisible">All objects in the universe exert a gravitational force on all others. But, the farther away an object is, the smaller is the force it exerts.</dd><br>
+
+		<dt>Which planets are called the "gaseous" planets?</dt>
+		<dd class='invisible'>Jupiter, Saturn, Uranus and Neptune are called the "gaseous" planets. Jupiter and Saturn contain the largest percentages of hydrogen and helium, while Uranus and Neptune contain the largest shares of ices – frozen water, ammonia, methane and carbon monoxide.</dd><br>
+
+		<dt>Which planets have rings?</dt>
+		<dd class='invisible'>The four gas giants, Jupiter, Saturn, Uranus and Neptune, have rings.</dd><br>
+
+		<dt>What are globular star clusters?</dt>
+		<dd class='invisible'>A globular star cluster is a collection of up to a million stars that all share the same origin.</dd><br>
+
+		<dt>What is a galaxy?</dt>
+		<dd class='invisible'>A galaxy is an enormous collection of gas, dust and billions of stars held together by gravity.</dd><br>
+
+		<dt>What is escape velocity?</dt>
+		<dd class='invisible'>Escape velocity is the speed a moving object must have in order to escape from the gravitational pull exerted by another object.</dd>
+	</dl>
+
+
+	<script>
+	$('document').ready(function(){
+
+		 $('a').click(function(event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+            });
+	});
+	</script>
+
+	<a href="#" id="highlight-important">Display Answers.</a>
+</body>
+</html>
