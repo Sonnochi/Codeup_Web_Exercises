@@ -26,6 +26,7 @@ var_dump($_POST);
         <button type="submit">Login</button>
     </p>
 </form>
+
 <h2>Compose an Email</h2>
 <form method="POST" action="/my_first_form.php">
 	<p>

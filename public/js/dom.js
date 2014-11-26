@@ -1,23 +1,20 @@
 
 
-        // todo: get the main header element by id
-        var mainHeader = document.getElementById("main-header");
-
+        // get the main header element by id
+        var mainHeader = function(){
+            mainHeader = document.getElementById("main-header");
+            mainHeader.innerHTML = "JavaScript is Cool";
+        };
         console.log(mainHeader); //prints <h1 id=mainHeader...>
-
-        // todo: set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-
         console.log(mainHeader.innerHTML); //prints JavaScript is Cool
 
         // todo: get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
+        var subHeader = function(){
+            subHeader = document.getElementById("sub-header");
+            subHeader.style['color'] = 'blue'; //changes subHeader text to blue
+        }
 
-        console.log(subHeader); //prints <h2 id=subHeader...>
-
-        // todo: set the text color of subHeader to blue
-        subHeader.style['color'] = 'blue'; //changes subHeader text to blue
-
+        console.log(subHeader); 
         console.log(subHeader.style['color']);
 
         // todo: get all list items
@@ -49,3 +46,9 @@
         subParagraphs[0].innerHTML = "Mission Accomplished!";
 
         console.log(subParagraphs[0].innerHTML); //prints line 49
+
+document.getElementById('btn1').addEventListener('click', mainHeader, false);
+// document.getElementById('btn2').addEventListener('click', subHeader, false);
+// document.getElementById('btn3').addEventListener('click', listItems, false);
+// document.getElementById('btn4').addEventListener('click', subParagraphs, false);
+
